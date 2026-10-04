@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #07110e;
+    color: #ffffff;
+}
+
+button {
+    font-family: inherit;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.app-layout {
+    min-height: 100vh;
+    display: flex;
+}
+
+.main-content {
+    flex: 1;
+    min-width: 0;
+    padding: 32px;
+}
+
+.sidebar {
+    width: 260px;
+    min-height: 100vh;
+
+    background: #075f4d;
+
+    padding: 24px 16px;
+
+    display: flex;
+    flex-direction: column;
+
+    transition: width 0.25s ease;
+}
+
+.sidebar.collapsed {
+    width: 80px;
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 32px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.brand-logo {
+    font-size: 28px;
+}
+
+.brand h2 {
+    font-size: 22px;
+}
+
+.brand p {
+    font-size: 12px;
+    opacity: 0.75;
+    margin-top: 3px;
+}
+
+.menu-button {
+    border: none;
+    background: transparent;
+    color: white;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    padding: 13px 14px;
+
+    border-radius: 10px;
+
+    transition: background 0.2s ease;
+}
+
+.nav-item:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.nav-item.active {
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.sidebar.collapsed .nav-item {
+    justify-content: center;
+}
