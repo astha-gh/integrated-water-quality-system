@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext";
 import {
   Menu,
   X,
@@ -14,6 +16,12 @@ import {
 } from "lucide-react";
 
 function Sidebar() {
+  const navigate = useNavigate();
+  const { logout } = useAuth();
+  const handleLogout = () => {
+    logout();
+    navigate("/login");
+  };
   const [collapsed, setCollapsed] = useState(false);
 
   const menuItems = [
@@ -99,6 +107,9 @@ function Sidebar() {
           );
         })}
       </nav>
+      <button className="logout-button" onClick={handleLogout}>
+        Logout
+      </button>
     </aside>
   );
 }

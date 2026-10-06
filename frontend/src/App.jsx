@@ -1,6 +1,7 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 
 import DashboardLayout from "./layouts/DashboardLayout";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 import Login from "./pages/Login";
 import Register from "./pages/Register";
@@ -16,23 +17,25 @@ import Settings from "./pages/Settings";
 function App() {
   return (
     <Routes>
-      {/* Authentication */}
+      {/* Public routes */}
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
 
-      {/* Main application */}
-      <Route element={<DashboardLayout />}>
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/map" element={<Map />} />
-        <Route path="/ml" element={<MLAnalysis />} />
-        <Route path="/camera" element={<Camera />} />
-        <Route path="/history" element={<History />} />
-        <Route path="/reports" element={<Reports />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/settings" element={<Settings />} />
+      {/* Protected application */}
+      <Route element={<ProtectedRoute />}>
+        <Route element={<DashboardLayout />}>
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/map" element={<Map />} />
+          <Route path="/ml" element={<MLAnalysis />} />
+          <Route path="/camera" element={<Camera />} />
+          <Route path="/history" element={<History />} />
+          <Route path="/reports" element={<Reports />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/settings" element={<Settings />} />
+        </Route>
       </Route>
 
-      {/* Default route */}
+      {/* Unknown route */}
       <Route path="*" element={<Navigate to="/dashboard" replace />} />
     </Routes>
   );
