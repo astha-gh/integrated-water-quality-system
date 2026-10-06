@@ -1,0 +1,22 @@
+/* =========================
+   APPLICATION LAYOUT
+========================= */
+
+.app-layout {
+    min-height: 100vh;
+    display: flex;
+    background: #08130f;
+}
+
+.content-area {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1;
+    min-width: 0;
+    padding: 24px 32px;
+}

@@ -1,0 +1,161 @@
+/* =========================
+   CAMERA PAGE
+========================= */
+
+.camera-page {
+    width: 100%;
+}
+
+.camera-status {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    padding: 9px 14px;
+
+    border-radius: 8px;
+
+    background: #241d12;
+    color: #d7a83e;
+
+    font-size: 14px;
+}
+
+.camera-grid {
+    margin-top: 24px;
+
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+
+    gap: 20px;
+}
+
+.camera-card {
+    background: #13221e;
+    border: 1px solid #1d342c;
+    border-radius: 16px;
+
+    padding: 22px;
+}
+
+.camera-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+}
+
+.camera-card-header h2 {
+    margin: 0 0 5px;
+    font-size: 19px;
+}
+
+.camera-card-header p {
+    margin: 0;
+
+    color: #819990;
+    font-size: 14px;
+}
+
+.camera-card-header>svg {
+    color: #159b78;
+}
+
+.camera-preview {
+    min-height: 400px;
+
+    border: 1px dashed #2a443b;
+    border-radius: 12px;
+
+    background: #0b1814;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    color: #819990;
+}
+
+.camera-preview svg {
+    color: #159b78;
+    margin-bottom: 14px;
+}
+
+.camera-preview h3 {
+    margin: 0 0 6px;
+    color: #dce9e5;
+}
+
+.camera-preview p {
+    margin: 0;
+}
+
+.sample-preview {
+    min-height: 280px;
+
+    border: 1px dashed #2a443b;
+    border-radius: 12px;
+
+    background: #0b1814;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    color: #819990;
+}
+
+.sample-preview svg {
+    color: #159b78;
+    margin-bottom: 12px;
+}
+
+.sample-preview p {
+    margin: 0;
+}
+
+.sample-info {
+    margin-top: 16px;
+}
+
+.sample-info div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: #819990;
+    font-size: 14px;
+}
+
+.sample-info svg {
+    color: #159b78;
+}
+
+@media (max-width: 900px) {
+    .camera-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .camera-status {
+        display: none;
+    }
+
+    .camera-card {
+        padding: 16px;
+    }
+
+    .camera-preview {
+        min-height: 300px;
+    }
+
+    .sample-preview {
+        min-height: 220px;
+    }
+}

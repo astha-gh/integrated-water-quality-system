@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import {
   Menu,
@@ -18,13 +17,14 @@ import {
 function Sidebar() {
   const navigate = useNavigate();
   const { logout } = useAuth();
+  const [collapsed, setCollapsed] = useState(false);
+
   const handleLogout = () => {
     logout();
     navigate("/login");
   };
-  const [collapsed, setCollapsed] = useState(false);
 
-  const menuItems = [
+  const mainItems = [
     {
       name: "Dashboard",
       path: "/dashboard",
@@ -50,15 +50,13 @@ function Sidebar() {
       path: "/history",
       icon: History,
     },
+  ];
+
+  const systemItems = [
     {
       name: "Reports",
       path: "/reports",
       icon: FileText,
-    },
-    {
-      name: "Profile",
-      path: "/profile",
-      icon: User,
     },
     {
       name: "Settings",
@@ -67,13 +65,38 @@ function Sidebar() {
     },
   ];
 
+  const accountItems = [
+    {
+      name: "Profile",
+      path: "/profile",
+      icon: User,
+    },
+  ];
+
+  const renderItems = (items) => {
+    return items.map((item) => {
+      const Icon = item.icon;
+
+      return (
+        <NavLink
+          key={item.path}
+          to={item.path}
+          className="nav-item"
+          title={collapsed ? item.name : ""}
+        >
+          <Icon size={20} />
+          {!collapsed && <span>{item.name}</span>}
+        </NavLink>
+      );
+    });
+  };
+
   return (
     <aside className={`sidebar ${collapsed ? "collapsed" : ""}`}>
       <div className="sidebar-header">
         {!collapsed && (
           <div className="brand">
             <div className="brand-logo">💧</div>
-
             <div>
               <h2>CWPRS</h2>
               <p>Water Quality System</p>
@@ -90,23 +113,16 @@ function Sidebar() {
       </div>
 
       <nav className="sidebar-nav">
-        {menuItems.map((item) => {
-          const Icon = item.icon;
+        {!collapsed && <p className="nav-section-title">MAIN</p>}
+        {renderItems(mainItems)}
 
-          return (
-            <NavLink
-              key={item.path}
-              to={item.path}
-              className="nav-item"
-              title={collapsed ? item.name : ""}
-            >
-              <Icon size={20} />
+        {!collapsed && <p className="nav-section-title">SYSTEM</p>}
+        {renderItems(systemItems)}
 
-              {!collapsed && <span>{item.name}</span>}
-            </NavLink>
-          );
-        })}
+        {!collapsed && <p className="nav-section-title">ACCOUNT</p>}
+        {renderItems(accountItems)}
       </nav>
+
       <button className="logout-button" onClick={handleLogout}>
         Logout
       </button>

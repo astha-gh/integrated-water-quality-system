@@ -1,0 +1,103 @@
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    min-height: 78px;
+
+    padding: 16px 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    border-bottom: 1px solid #1d342c;
+
+    background: #0b1814;
+}
+
+.navbar h2 {
+    margin: 0 0 4px;
+
+    font-size: 21px;
+    font-weight: 600;
+}
+
+.navbar p {
+    margin: 0;
+
+    color: #819990;
+    font-size: 12px;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.system-status {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    color: #80d6ba;
+    font-size: 13px;
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+    background: #35c795;
+}
+
+.navbar-user {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    font-size: 14px;
+}
+
+.user-avatar {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #167d64;
+    color: white;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* =========================
+   MOBILE NAVBAR
+========================= */
+
+@media (max-width: 700px) {
+    .navbar {
+        padding: 14px 18px;
+    }
+
+    .navbar p {
+        display: none;
+    }
+
+    .system-status {
+        display: none;
+    }
+
+    .navbar-user span {
+        display: none;
+    }
+}

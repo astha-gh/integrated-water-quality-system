@@ -1,0 +1,165 @@
+/* =========================
+   PROFILE PAGE
+========================= */
+
+.profile-page {
+    width: 100%;
+}
+
+.profile-layout {
+    margin-top: 24px;
+
+    display: grid;
+    grid-template-columns: 300px minmax(0, 1fr);
+
+    gap: 20px;
+    align-items: start;
+}
+
+.profile-card {
+    background: #13221e;
+    border: 1px solid #1d342c;
+    border-radius: 16px;
+
+    padding: 24px;
+}
+
+.profile-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+}
+
+.profile-avatar {
+    width: 90px;
+    height: 90px;
+
+    border-radius: 50%;
+
+    background: #0b3027;
+    border: 2px solid #159b78;
+    color: #159b78;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 34px;
+    font-weight: 600;
+
+    margin-bottom: 18px;
+}
+
+.profile-main h2 {
+    margin: 0 0 6px;
+    font-size: 21px;
+}
+
+.profile-main>p {
+    margin: 0;
+
+    color: #819990;
+    font-size: 14px;
+}
+
+.profile-role {
+    margin-top: 16px;
+
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    padding: 7px 11px;
+
+    border-radius: 20px;
+
+    background: #0b3027;
+    color: #159b78;
+
+    font-size: 12px;
+}
+
+.profile-card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding-bottom: 18px;
+
+    border-bottom: 1px solid #263d36;
+}
+
+.profile-card-header svg {
+    color: #159b78;
+}
+
+.profile-card-header h2 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.profile-info {
+    margin-top: 8px;
+}
+
+.profile-info-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    padding: 16px 0;
+
+    border-bottom: 1px solid #1d342c;
+}
+
+.profile-info-item:last-child {
+    border-bottom: none;
+}
+
+.profile-info-icon {
+    width: 40px;
+    height: 40px;
+
+    flex-shrink: 0;
+
+    border-radius: 9px;
+
+    background: #0b3027;
+    color: #159b78;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-info-item div:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.profile-info-item span {
+    color: #819990;
+    font-size: 12px;
+}
+
+.profile-info-item strong {
+    color: #dce9e5;
+    font-size: 14px;
+}
+
+.profile-info-item .active-account {
+    color: #159b78;
+}
+
+@media (max-width: 800px) {
+    .profile-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-main {
+        padding: 30px 20px;
+    }
+}

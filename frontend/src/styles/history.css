@@ -1,0 +1,64 @@
+/* =========================
+   HISTORY PAGE
+========================= */
+
+.history-page {
+    width: 100%;
+}
+
+.history-card {
+    background: #13221e;
+    border: 1px solid #1d342c;
+    border-radius: 16px;
+
+    padding: 22px;
+}
+
+.combined-chart {
+    margin-top: 24px;
+}
+
+.history-card-header {
+    margin-bottom: 20px;
+}
+
+.history-card-header h2 {
+    margin: 0 0 6px;
+    font-size: 19px;
+}
+
+.history-card-header p {
+    margin: 0;
+
+    color: #819990;
+    font-size: 14px;
+}
+
+.chart-wrapper {
+    width: 100%;
+}
+
+.individual-charts {
+    margin-top: 20px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+@media (max-width: 900px) {
+    .individual-charts {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .history-card {
+        padding: 16px;
+    }
+
+    .combined-chart {
+        overflow-x: auto;
+    }
+}
